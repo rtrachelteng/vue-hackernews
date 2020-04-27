@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import TestComponent from '../TestComponent.vue'
-// import Child from '../Child.vue'
+import Child from '../Child.vue'
 
 // describe('Chapter 2', () => {
 //   test('renders Hello, World!', () => {
@@ -18,11 +18,10 @@ describe('Chapter 3', () => {
     expect(a.attributes().href).toBe(url)
   })
 
-  // Still cant solve
-  // test('renders Child', () => {
-  //   const wrapper = shallowMount(TestComponent)
-  //   expect(wrapper.find(Child).props().testProp).toBe('some-value')
-  // })
+  test('renders Child', () => {
+    const wrapper = shallowMount(TestComponent)
+    expect(wrapper.find(Child).props().testProp).toBe('some-value')
+  })
 
   test('p tag is styled color red', () => {
     const wrapper = shallowMount(TestComponent)
